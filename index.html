@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculatorBody">
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="result"><samp style="color: rgb(33, 53, 112);">@imran</samp></td>
+        </tr> 
+
+        <tr>
+            <td><input  type="button" value="("  onclick="calculator('(')"></td>
+            <td><input value=")" type="button" onclick="calculator(')')"></td>
+            <td><input value="%" type="button" onclick="calculator('%')"></td>
+            <td><input value="C" type="button" onclick="DeletMe('')"></td>
+        </tr>
+        <tr>
+            <td><input  type="button" value="7"  onclick="calculator('7')"></td>
+            <td><input value="8" type="button" onclick="calculator('8')"></td>
+            <td><input value="9" type="button" onclick="calculator('9')"></td>
+            <td><input value="+" type="button" onclick="calculator('+')"></td>
+        </tr>
+        <tr>
+            <td><input value="4" type="button" onclick="calculator('4')"></td>
+            <td><input value="5" type="button" onclick="calculator('5')"></td>
+            <td><input value="6" type="button" onclick="calculator('6')"></td>
+            <td><input value="-" type="button" onclick="calculator('-')"></td>
+        </tr>
+        <tr>
+            <td><input value="1" type="button" onclick="calculator('1')"></td>
+            <td><input value="2" type="button" onclick="calculator('2')"></td>
+            <td><input value="3" type="button" onclick="calculator('3')"></td>
+            <td><input value="*" type="button" onclick="calculator('*')"></td>
+        </tr>
+        <tr>
+            <td><input value="0" type="button" onclick="calculator('0')"></td>
+            <td><input value="." type="button" onclick="calculator('.')"></td>
+            <td><input type="button" value="=" onclick="Answer('=')"></td>
+            <td><input type="button" value="/" onclick="calculator('/')"></td>
+        </tr>
+       
+    </table>
+</div>  
+
+
+<style>
+    *{
+        margin: 0;
+    }
+body{
+    background-color: rgb(162, 163, 164);
+}
+.calculatorBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+}
+table{
+    background-color: rgb(9, 9, 10);
+    /* box-shadow: rgb(38, 37, 37) 0px 10px 50px ; */
+    border: 2px solid;
+    /* border-collapse: collapse; */
+    border-radius: 10px;
+}
+td{
+    text-align: center;
+    color: #fff1;
+    border: 2px solid #191919;
+}
+input[type="button"]{
+    width: 90px;
+    height: 80px;
+    color: aliceblue;
+    background-color: black;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    outline: none ;
+    border: none;
+ 
+}
+
+input[type="button"]:hover{
+    background-image:linear-gradient(45deg,rgb(56, 26, 46),rgb(29, 21, 44));
+     outline: none;
+     color: rgb(95, 88, 88);
+}
+input[type="text"]{
+    color: rgb(151, 128, 242);
+    background-color: rgb(71, 51, 28);
+    width:340px ;
+    height: 80px;
+    text-align: right;
+    margin: 10px;
+    padding: 2px;
+    outline: none;
+    border: none;
+    font-size: 30px;
+}
+</style>
+
+
+
+
+
+
+    <script>
+        function DeletMe(){
+            document.getElementById("result").value=""
+        }
+
+
+ function calculator(NewValue){
+    document.getElementById("result").value +=  NewValue;
+ }
+ function Answer(){
+var a=document.getElementById("result").value;
+var b=eval(a);
+document.getElementById("result").value=b;
+ }
+    </script>
+</body>
+</html>
